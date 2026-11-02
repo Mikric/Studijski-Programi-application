@@ -1,0 +1,617 @@
+/* ==========================================================================
+   Studijski programi — warm pastel theme
+   ========================================================================== */
+
+:root {
+    --bg: #fdf8f3;
+    --bg-soft: #ecc9a3;
+    --surface: #fffdfa;
+    --surface-2: #fdf1e4;
+    --border: #e2bd94;
+    --text: #5b4033;
+    --text-muted: #a98c78;
+    --accent: #f1a884;
+    --accent-2: #f6c9c3;
+    --accent-gradient: linear-gradient(135deg, #f3ab8a 0%, #f6c39a 50%, #f7cfc4 100%);
+    --accent-strong: #4a2f22;
+    --danger: #d97e86;
+    --danger-soft: rgba(217, 126, 134, 0.16);
+    --danger-strong: #5c1620;
+    --warning: #dba053;
+    --warning-soft: rgba(219, 160, 83, 0.18);
+    --warning-strong: #4a2f0d;
+    --radius: 14px;
+    --shadow: 0 20px 40px -24px rgba(196, 148, 112, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+}
+
+.page-shell {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 88px 24px 80px;
+}
+
+/* ---------- Header ---------- */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 36px;
+}
+
+.page-header .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c98866;
+    margin: 0 0 8px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--accent-strong);
+}
+
+.page-header p {
+    margin: 8px 0 0;
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.badge-count {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.badge-count span:first-child {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.badge-count span:last-child {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: var(--accent-strong);
+}
+
+/* ---------- Pretraga / filteri ---------- */
+
+.search-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.search-row .form-input {
+    flex: 1 1 240px;
+}
+
+.search-row select.form-input {
+    flex: 0 1 180px;
+}
+
+/* ---------- Upozorenje ---------- */
+
+.warning-banner {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: var(--warning-soft);
+    color: var(--warning-strong);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ok-banner {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: rgba(120, 170, 120, 0.18);
+    color: #2f5c33;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ---------- Stat tiles (detail page) ---------- */
+
+.stats-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+}
+
+.stat-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-strong);
+}
+
+/* ---------- Form card ---------- */
+
+.form-card {
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.form-card h2 {
+    margin: 0 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+#forma-program {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 200px;
+}
+
+.field-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+}
+
+.field-spacer {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    visibility: hidden;
+}
+
+#forma-modul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 10px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.btn-primary {
+    background: var(--accent-gradient);
+    color: var(--accent-strong);
+    box-shadow: 0 10px 24px -10px rgba(243, 171, 138, 0.7);
+}
+
+.btn-primary:hover {
+    opacity: 0.92;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.btn-ghost:hover {
+    color: var(--text);
+    border-color: var(--text-muted);
+}
+
+.btn-sm {
+    padding: 7px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.btn-view {
+    background: rgba(241, 168, 132, 0.2);
+    color: var(--accent-strong);
+}
+
+.btn-view:hover {
+    background: var(--accent);
+    color: var(--accent-strong);
+}
+
+.btn-edit {
+    background: var(--warning-soft);
+    color: var(--warning-strong);
+}
+
+.btn-edit:hover {
+    background: var(--warning);
+    color: var(--warning-strong);
+}
+
+.btn-delete {
+    background: var(--danger-soft);
+    color: var(--danger-strong);
+}
+
+.btn-delete:hover {
+    background: var(--danger);
+    color: var(--danger-strong);
+}
+
+/* ---------- Table card ---------- */
+
+.table-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    background: var(--bg-soft);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody td {
+    padding: 16px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: background 0.12s ease;
+}
+
+tbody tr:hover {
+    background: rgba(243, 171, 138, 0.1);
+}
+
+td.col-actions {
+    white-space: nowrap;
+}
+
+td.col-actions .btn {
+    margin-right: 8px;
+}
+
+td.col-actions .btn:last-child {
+    margin-right: 0;
+}
+
+.empty-row td {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.radio-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 7px 10px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.radio-option:hover {
+    border-color: var(--accent);
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+.radio-dot {
+    position: relative;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.15s ease;
+}
+
+.radio-dot::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: var(--accent);
+    transform: scale(0);
+    transition: transform 0.15s ease;
+}
+
+.radio-option input:checked ~ .radio-dot {
+    border-color: var(--accent);
+}
+
+.radio-option input:checked ~ .radio-dot::after {
+    transform: scale(1);
+}
+
+.radio-option:has(input:checked) {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(243, 171, 138, 0.4);
+    transform: scale(1.04);
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input::placeholder {
+    color: #8a6a52;
+}
+
+.form-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(243, 171, 138, 0.35);
+}
+
+.form-input[readonly] {
+    background: var(--border);
+    color: var(--accent-strong);
+    cursor: not-allowed;
+}
+
+.form-input[readonly]:focus {
+    border-color: var(--border);
+    box-shadow: none;
+}
+
+select.form-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23a98c78'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 34px;
+    cursor: pointer;
+}
+
+#forma-predmet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+/* ---------- Predmeti: veca, zaobljenija polja u tonu stranice ---------- */
+
+.page-predmeti .form-input {
+    padding: 14px 18px;
+    border-radius: var(--radius);
+    font-size: 15px;
+    background: var(--surface-2);
+}
+
+.page-predmeti select.form-input {
+    padding-right: 38px;
+    background-position: right 16px center;
+}
+
+.context-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Toggle tabovi ---------- */
+
+.toggle-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* ---------- Section label (naslov iznad gole tabele) ---------- */
+
+.section-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 12px;
+}
+
+/* ---------- Inline mini-forma za novu izbornu poziciju ---------- */
+
+.inline-subform {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 14px;
+    background: var(--surface-2);
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* ---------- Bedz za izbornu poziciju ---------- */
+
+.badge-pozicija {
+    color: var(--text);
+    font-size: 14px;
+}
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #forma-program {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #forma-modul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #forma-predmet {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .context-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stats-row {
+        flex-direction: column;
+    }
+
+    .form-actions {
+        width: 100%;
+    }
+
+    .form-actions .btn {
+        flex: 1;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+}
